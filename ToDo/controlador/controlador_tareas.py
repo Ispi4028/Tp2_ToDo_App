@@ -7,15 +7,20 @@ class ControladorDeTareas(QtCore.QObject):
 
     def __init__(self):
         super().__init__()
-        self.tareas = []
+        self.__tareas = []
 
     def agregar_tarea(self, descripcion):
         nueva_tarea = Tarea(descripcion)
-        self.tareas.append(nueva_tarea)
-        self.tarea_agregada.emit(nueva_tarea.descripcion)
+        self.__tareas.append(nueva_tarea)
+        self.__emitir_tarea_agregada(nueva_tarea)
 
     def eliminar_tarea(self, indice):
-        if 0 <= indice < len(self.tareas):
-            del self.tareas[indice]
-            #Emitir señal para actualizar la UI
-            self.tarea_eliminada.emit(indice)
+        if 0 <= indice < len(self.__tareas):
+            del self.__tareas[indice]
+            self.__emitir_tarea_eliminada(indice)
+
+    def __emitir_tarea_agregada(self, tarea):
+        self.tarea_agregada.emit(tarea.obtener_descripcion())
+
+    def __emitir_tarea_eliminada(self, indice):
+        self.tarea_eliminada.emit(indice)
