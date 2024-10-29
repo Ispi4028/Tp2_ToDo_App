@@ -1,5 +1,5 @@
 from PySide6 import QtWidgets
-from ventana_principal import VentanaPrincipal
+from ToDo.ui.ventana_principal import VentanaPrincipal
 import sys
 
 if __name__ == "__main__":
