@@ -1,6 +1,6 @@
 from PySide6 import QtWidgets, QtCore
-from ToDo.ui.listado_tareas import Ui_MainWindow
-from controlador.controlador_tareas import ControladorDeTareas
+from Tp2_ToDo_App.ui.listado_tareas import Ui_MainWindow
+from Tp2_ToDo_App.controlador.controlador_tareas import ControladorDeTareas
 
 
 class VentanaPrincipal(QtWidgets.QMainWindow):

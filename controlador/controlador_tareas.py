@@ -1,5 +1,5 @@
 from PySide6 import QtCore
-from modelo.tarea import Tarea
+from Tp2_ToDo_App.modelo.tarea import Tarea
 
 class ControladorDeTareas(QtCore.QObject):
     tarea_agregada = QtCore.Signal(str)
